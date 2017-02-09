@@ -1,0 +1,111 @@
++-----------------+
+| Tables_in_book1 |
++-----------------+
+| aval            |
+| bookticket      |
+| location        |
+| movies          |
+| shows           |
+| signup          |
+| theatres        |
+| user_history    |
++-----------------+
+8 rows in set (0.00 sec)
+
+mysql> desc signup;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| fname  | varchar(20) | YES  |     | NULL    |                |
+| lname  | varchar(20) | YES  |     | NULL    |                |
+| uname  | varchar(20) | YES  |     | NULL    |                |
+| email  | varchar(20) | YES  |     | NULL    |                |
+| pswd   | varchar(20) | YES  |     | NULL    |                |
+| gender | varchar(10) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> desc location;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| LID   | int(11)     | NO   | PRI | NULL    |       |
+| Lnmae | varchar(20) | YES  |     | NULL    |       |
+| state | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc theatres;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| THID  | int(11)     | NO   | PRI | NULL    |       |
+| LID   | int(11)     | NO   | MUL | NULL    |       |
+| Tname | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc mves;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| MID    | int(11)     | NO   | PRI | NULL    |       |
+| LID    | int(11)     | NO   | MUL | NULL    |       |
+| R_date | date        | YES  |     | NULL    |       |
+| mname  | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+mysql> desc shows;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| SID   | int(11)     | NO   | PRI | NULL    |       |
+| Sname | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc aval;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| MID   | int(11) | NO   | MUL | NULL    |       |
+| THID  | int(11) | NO   | MUL | NULL    |       |
+| SID   | int(11) | NO   | MUL | NULL    |       |
+| dte   | date    | YES  |     | NULL    |       |
+| G_c   | int(11) | YES  |     | NULL    |       |
+| S_c   | int(11) | YES  |     | NULL    |       |
+| B_c   | int(11) | YES  |     | NULL    |       |
+| G_p   | int(11) | YES  |     | NULL    |       |
+| S_p   | int(11) | YES  |     | NULL    |       |
+| B_p   | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> desc bookticket;
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| TID   | int(11) | NO   | PRI | NULL    | auto_increment |
+| MID   | int(11) | NO   | MUL | NULL    |                |
+| THID  | int(11) | NO   | MUL | NULL    |                |
+| SID   | int(11) | NO   | MUL | NULL    |                |
+| dte   | date    | YES  |     | NULL    |                |
+| Q_G_C | int(11) | YES  |     | NULL    |                |
+| Q_S_C | int(11) | YES  |     | NULL    |                |
+| Q_B_C | int(11) | YES  |     | NULL    |                |
+| T_P   | int(11) | YES  |     | NULL    |                |
++-------+---------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
+
+mysql> desc user_history;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| id    | int(11) | NO   | MUL | NULL    |       |
+| TID   | int(11) | NO   | MUL | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
